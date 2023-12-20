@@ -15,24 +15,9 @@ const nextAnecdote = () => {
   return num
 }
 
-const Title = ({ text }) => {
-  return (
-    <h2> {text} </h2>
-  )
-}
-
-const Button = ({ handlerclick, text }) => {
-  return(
-    <button onClick={handlerclick}> {text} </button>
-  )
-}
-
-const Vote = ({ votes }) => {
-
-  return (
-    <p>has <span>{votes}</span> votes</p>
-  )
-}
+const Title = ({ text }) => <h2> {text} </h2>
+const Button = ({ handlerclick, text }) => <button onClick={handlerclick}> {text} </button>
+const Vote = ({ votes }) => <p>has <span>{votes}</span> votes</p>
 
 const MaxVotes = ({ anecdote, votes }) => {
 
