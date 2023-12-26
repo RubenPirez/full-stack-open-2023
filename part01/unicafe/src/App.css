@@ -36,19 +36,9 @@ button {
   transition: border-color 0.25s;
   margin: 0 5px;
 }
+
 button:hover {
   border-color: #646cff;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  button {
-    background-color: #f9f9f9;
-    border-color: #213547;
-  }
 }
 
 table{
@@ -59,4 +49,26 @@ table{
 td {
   border: 2px solid #fff;
   padding: 10px;
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		color: #213547;
+		background-color: #ffffff;
+	  }
+	
+	  button {
+		background-color: #fff;
+		border-color: #213547;
+	  }
+	
+	  button:hover {
+		color: #fff;
+		background-color: #213547;
+		border-color: #213547;
+	  }
+
+  	td {
+		border-color: #213547 !important;
+  	}
 }

@@ -63,6 +63,7 @@ button {
   transition: border-color 0.25s;
   margin: 5px;
 }
+
 button:hover {
   border-color: #646cff;
 }
@@ -72,8 +73,19 @@ button:hover {
     color: #213547;
     background-color: #ffffff;
   }
+
   button {
-    background-color: #213547;
+    background-color: #fff;
     border-color: #213547;
+  }
+
+  button:hover {
+	color: #fff;
+	background-color: #213547;
+	border-color: #213547;
+  }
+
+  #root {
+	border-color: #213547;
   }
 }
