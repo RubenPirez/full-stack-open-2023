@@ -24,11 +24,11 @@ const App = () => {
 			phone: newNumber
 		}
 
-		const existe = persons.filter((person) => {
+		const exists = persons.filter((person) => {
 			return person.name.toLowerCase() === personObject.name.toLowerCase()
 		})
 
-		if (existe.length > 0) {
+		if (exists.length > 0) {
 			alert(`${newName} is already added to phonebook`)
 			setNewName('')
 		} else {
@@ -36,11 +36,28 @@ const App = () => {
 			setNewName('')
 			setNewNumber('')
 		}
+		console.log(persons);
 	}
 
 	const searchPerson = (e) => {
 		e.preventDefault()
+		
+		const tmp = persons.filter(person => {
+			//console.log('Persons', person.name);
+			//console.log('SearchPersons', newSearch);
+			return person.name.toLowerCase().includes(newSearch.toLowerCase())
+		})
+		if ( tmp.length > 0 ) {
+			setPersons(tmp)
+			console.log(persons);
+		} else {
+			setPersons(persons)
+			console.log(persons);
+		}
+		
+		//console.log('TMP', tmp);
 	}
+
 
 	const handlePersonsChange = (e) => {
 		setNewName(e.target.value)
@@ -64,6 +81,9 @@ const App = () => {
 						onChange={handleSearch}
 					/>
 			</div>
+			<div>
+				<button onClick={searchPerson} type="submit">Search</button>
+			</div>
 			<h3>Add New Contact</h3>
 			<form>
 				<div>
@@ -79,7 +99,7 @@ const App = () => {
 					/>
 				</div>
 				<div>
-					<button onClick={addPerson} type="submit">add</button>
+					<button onClick={addPerson} type="submit">Add</button>
 				</div>
 			</form>
 			<h2>Contacts</h2>
