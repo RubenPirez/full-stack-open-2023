@@ -76,6 +76,16 @@ ul {
 	padding: 10px;
 }
 
+.search {
+	display: flex;
+	justify-content: center;
+	margin: 20px 0 35px 0;
+}
+
+.search input {
+	margin-left: 10px;
+}
+
 @media (prefers-color-scheme: light) {
 	:root {
 		color: #213547;
