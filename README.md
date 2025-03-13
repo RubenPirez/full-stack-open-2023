@@ -1,8 +1,9 @@
-###https://fullstackopen.com/es
+### https://fullstackopen.com/es
 
 INICIAR PROYECTO EN REACT CON VITE
 
-**Inicio automático. Sustituir "project-name" por el nombre del proyecto**
+**Inicio automático.**\ 
+Sustituir "project-name" por el nombre del proyecto\
 npm create vite@latest project-name -- --template react\
 npm install\
 npm run dev
