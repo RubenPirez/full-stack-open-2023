@@ -23,7 +23,7 @@ npm run dev
 main.jsx -> PUNTO DE ENTRADA DE LA APLICACIÓN
 
 ### Install resources in main project (dependencies)
-**Start Json Server**
+**__Start Json Server__**
 
 npx json-server --port 3001 --watch db.json
 
