@@ -2,13 +2,15 @@
 
 INICIAR PROYECTO EN REACT CON VITE
 
-**Inicio automático.**\ 
+**Inicio automático.**
+
 Sustituir "project-name" por el nombre del proyecto\
 npm create vite@latest project-name -- --template react\
 npm install\
 npm run dev
 
 **Inicio manual**
+
 npm create vite@latest
 
 -> nombre del proyecto -> React -> JavaScript + SWC o TypeScript + SWC
