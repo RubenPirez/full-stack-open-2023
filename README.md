@@ -2,14 +2,14 @@
 
 INICIAR PROYECTO EN REACT CON VITE
 
-**Automatic Start**
+***Automatic Start***
 
 Sustituir "project-name" por el nombre del proyecto\
 npm create vite@latest project-name -- --template react\
 npm install\
 npm run dev
 
-**Manual Start**
+***Manual Start***
 
 npm create vite@latest
 
@@ -23,17 +23,16 @@ npm run dev
 main.jsx -> PUNTO DE ENTRADA DE LA APLICACIÓN
 
 ### Install resources in main project (dependencies)
-**__Start Json Server__**
+***Start Json Server***
 
 npx json-server --port 3001 --watch db.json
 
-**Install Axios**
+***Install Axios***
 
 npm install axios
 
-**Add json server like devPendencies and add script**
+***Add json server like devPendencies and add script***
 ```
-
 npm install json-server --save-dev
 
 "scripts": {
@@ -41,8 +40,6 @@ npm install json-server --save-dev
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "server": "json-server -p3001 --watch db.json"
-    },
+    --> "server": "json-server -p3001 --watch db.json"
+},
 ```
-
-
