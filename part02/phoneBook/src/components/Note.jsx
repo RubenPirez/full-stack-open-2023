@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
+import noteService from "../services/noteService"
 
 export function Note() {
 
@@ -9,8 +10,8 @@ export function Note() {
 
     useEffect(() => {
         // console.log('effect')
-        axios
-        .get('http://localhost:3001/notes')
+        noteService
+        .getAll()
         .then((response) => {
             console.log('promise fulfilled')
             setNotes(response.data)
@@ -26,8 +27,8 @@ export function Note() {
             // id: String(notes.length + 1),
         }
 
-        axios
-            .post('http://localhost:3001/notes', noteObject)
+        noteService
+            .create(noteObject)
             .then((response) => {
                 console.log(response)
             })
@@ -41,8 +42,8 @@ export function Note() {
         const note = notes.find((n) => n.id === id)
         const changedNote = { ...note, important: !note.important }
 
-        axios
-            .put(url, changedNote)
+        noteService
+            .update(id, changedNote)
             .then((response) => {
                 // console.log(response)
                 setNotes(notes.map((note) => (note.id !== id ? note : response.data)))
