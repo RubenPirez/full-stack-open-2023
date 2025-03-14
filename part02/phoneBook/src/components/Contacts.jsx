@@ -8,7 +8,9 @@ export function Contacts() {
     const [showAll, setShowAll] = useState(true)
 
     useEffect(() => {
-        axios.get('http://localhost:3001/contacts').then((response) => {
+        axios
+        .get('http://localhost:3001/contacts')
+        .then((response) => {
             setNotes(response.data)
         })
     }, [])
@@ -17,7 +19,7 @@ export function Contacts() {
 
     return (
         <div>
-            <h1>Notes</h1>
+            <h1>Contacts</h1>
             <div>
             </div>
             <ul>

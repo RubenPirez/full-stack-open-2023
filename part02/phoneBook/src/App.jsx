@@ -2,6 +2,7 @@ import './App.css'
 import React, { useEffect, useState } from 'react'
 import { use } from 'react'
 import { Contacts } from './components/Contacts'
+import { Note } from './components/Note'
 //import AddContact from './components/AddContact'
 
 const App = () => {
@@ -82,6 +83,7 @@ const App = () => {
 				</div>
 			</form>
 			<Contacts />
+			<Note />
 		</div>
 	)
 }
