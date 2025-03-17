@@ -21,4 +21,4 @@ export function Search(contacts) {
             onChange={handleSearch}
         />
     )
-} 
+}
