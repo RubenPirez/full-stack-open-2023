@@ -10,7 +10,6 @@ const App = () => {
 	const [contacts, setContacts] = useState([])
 	const [newName, setNewName] = useState('')
 	const [newNumber, setNewNumber] = useState('')
-	const [search, setSearch] = useState('')
 
 	const addContact = (e) => {
 		e.preventDefault()
@@ -43,26 +42,9 @@ const App = () => {
 		setNewNumber(e.target.value)
 	}
 
-	// search function
-	const handleSearch = (e) => {
-		// console.log(e.target.value);
-		setSearch(e.target.value)
-	}
-
-	const results = !search
-			? contacts
-			: contacts.filter( contact => contact.name.toLowerCase().includes(search.toLowerCase()))
-
 	return (
 		<div>
 			<h1>PhoneBook</h1>
-			<div className='search'>
-			Filter shown with: <input
-						type='text'
-						value={search}
-						onChange={handleSearch}
-					/>
-			</div>
 			<h3>Add New Contact</h3>
 			<form>
 				<div>
@@ -83,6 +65,8 @@ const App = () => {
 				</div>
 			</form>
 			<Contacts />
+			<hr />
+			<hr />
 			<Note />
 		</div>
 	)
