@@ -12,9 +12,9 @@ export function Note() {
         // console.log('effect')
         noteService
         .getAll()
-        .then((response) => {
-            console.log('promise fulfilled')
-            setNotes(response.data)
+        .then((initalNotes) => {
+            console.log('promise ok')
+            setNotes(initalNotes)
         })
     }, [])
     // console.log('render', notes.length, 'notes')
@@ -29,12 +29,11 @@ export function Note() {
 
         noteService
             .create(noteObject)
-            .then((response) => {
-                console.log(response)
+            .then((returnedNote) => {
+                console.log(returnedNote)
+                setNotes(notes.concat(returnedNote))
+                setNewNote('')
             })
-
-        setNotes(notes.concat(noteObject))
-        setNewNote('')
     }
 
     const toggleImportanceOf = (id) => {
@@ -44,9 +43,8 @@ export function Note() {
 
         noteService
             .update(id, changedNote)
-            .then((response) => {
-                // console.log(response)
-                setNotes(notes.map((note) => (note.id !== id ? note : response.data)))
+            .then((returnedNote) => {
+                setNotes(notes.map((note) => (note.id !== id ? note : returnedNote)))
             })
         console.log(`Botón presionado de la nota con id ${id}`)
     }
