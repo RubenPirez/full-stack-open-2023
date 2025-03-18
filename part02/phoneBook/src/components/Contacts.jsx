@@ -1,10 +1,10 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import { AddContact } from './AddContact'
 
 export function Contacts() {
 
     const [contacts, setContacts] = useState([])
-    const [newcontact, setNewcontact] = useState('')
     const [showAll, setShowAll] = useState(true)
     const [search, setSearch] = useState('')
 
@@ -22,6 +22,16 @@ export function Contacts() {
 		setSearch(e.target.value) ? setShowAll(true) : setShowAll(false)
 		// setSearch(e.target.value)
 	}
+
+    const addUser = (newUser) => {
+        if (contacts.find(contact => contact.name === newUser.name)) {
+            alert(`${newUser.name} is already added to phonebook`)
+            return
+        }
+        console.log(newUser)
+        // setContacts(contacts.concat(newUser))
+        setContacts([...contacts, newUser])
+    }
 
     const results = !search
 			? contacts
@@ -45,8 +55,8 @@ export function Contacts() {
                 />
             </div>
             <ul>
-                {contactsToShow.map((contact) => (
-                    <li key={contact.id}>
+                {contactsToShow.map((contact, index) => (
+                    <li key={index}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="#0284c7" d="m14 21l-2 2l-2-2H4.995A1.995 1.995 0 0 1 3 19.005V4.995C3 3.893 3.893 3 4.995 3h14.01C20.107 3 21 3.893 21 4.995v14.01A1.995 1.995 0 0 1 19.005 21zm-7.643-3h11.49a6.992 6.992 0 0 0-5.745-3a6.992 6.992 0 0 0-5.745 3M12 13a3.5 3.5 0 1 0 0-7a3.5 3.5 0 0 0 0 7" /></svg>
                     {contact.name}
                     <span>  </span>
@@ -55,6 +65,7 @@ export function Contacts() {
                 </li>
                 ))}
             </ul>
+            <AddContact addUser={addUser}/>
         </div>
     )
 }
