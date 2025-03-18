@@ -45,6 +45,7 @@ const App = () => {
 	return (
 		<div>
 			<h1>PhoneBook</h1>
+			{/*
 			<h3>Add New Contact</h3>
 			<form>
 				<div>
@@ -64,6 +65,7 @@ const App = () => {
 					<button onClick={addContact} type="submit">Add</button>
 				</div>
 			</form>
+			*/}
 			<Contacts />
 			<hr />
 			<hr />
